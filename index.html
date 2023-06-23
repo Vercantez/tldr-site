@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">		
+		<title>tl;dr AI</title>
+		<meta name="apple-itunes-app" content="app-id=6449304716">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;1,500&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="style.css">
+
+		<meta name="description" content="tl;dr AI is your smart reading companion, instantly summarizing any article on the web to save you time and help you stay informed. Read more, understand better, and save time.">
+		<meta name="keywords" content="tl;dr AI, AI summary, reading companion, web extension, Safari extension, time-saving app, productivity app, learn faster, quick summary, summarizing tool">
+		<meta name="robots" content="index, follow">
+		<meta property="og:title" content="tl;dr AI - Instantly summarize any article.">
+		<meta property="og:description" content="Instantly summarize any article on the web. Save time, stay informed, learn more.">
+		<meta property="og:image" content="appstore_black.svg">
+		<meta property="og:url" content="https://apps.apple.com/app/id6449304716">
+	</head>
+	<body>
+		<div class="container">
+			<h1 class="logo">tl;dr</h1>
+			<h2>Summarize any article on the web</h2>
+			<div class="hero">
+				<video class="demo-video" autoplay playsinline loop muted>
+					<source src="preview.mov" type="video/quicktime">
+					Your browser does not support the video tag.
+				</video>
+				<div class="side">
+					<div class="top-side">
+						<p>Read 100x more by getting to the point. Get to the point. Skip the fluff. Stay up to date. Learn more. </p>
+						<a href="https://apps.apple.com/app/id6449304716">
+							<img width="200px" src="appstore_black.svg" alt="App Store Icon">
+						</a>
+					</div>
+					<p>Looking for Chrome, Android or macOS Safari?<br />
+					Join the beta waitlist</p>
+					<p id="success-text" style="display: none;">✅ Joined the waitlist</p>
+					<form action="https://tldr-form.im3.workers.dev/" method="post" name="notification-form">
+						<div class="form-group">
+							<input type="email" name="member[email]" id="member_email" placeholder="Email address" required>
+						</div>
+						<div class="form-group">
+							<input type="submit" value="Join" name="member[subscribe]" id="member_submit">
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<script>
+			(function() {
+				var form = document.forms['notification-form'];
+				form.addEventListener('submit', function(event) {
+					event.preventDefault();
+					fetch(form.action, {
+						method: 'POST',
+						body: new URLSearchParams(new FormData(form))
+					}).then(function(response) {
+						if (response.ok) {
+							form.reset();
+							form.style.display = 'none';
+							document.getElementById('success-text').style.display = 'block';
+						} else {
+							alert('Something went wrong. Please try again.');
+						}
+					}).catch(function(error) {
+						alert('Something went wrong. Please try again.');
+					});
+				});
+			})();
+		</script>
+	</body>
+</html>
