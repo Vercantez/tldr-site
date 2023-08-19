@@ -137,6 +137,14 @@ p {
 	margin-right: 10px;
 }
 
+.mobileShow_desktopHide {
+	display: block;
+}
+
+.desktopShow_mobileHide {
+	display: none;
+}
+
 /* -------------------------------- RESPONSIVE STYLING ---------------------------*/
 
 @media (min-width: 780px) {
