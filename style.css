@@ -74,15 +74,6 @@ p {
 	align-items: center;
 }
 
-@media (min-width: 1024px) {
-	.hero {
-		flex-direction: row;
-	}
-	.side {
-		margin-left: 20px;
-	}
-}
-
 .demo-video {
 	max-width: 350px;
 	height: auto;
@@ -144,6 +135,24 @@ p {
 	font-size: 28px;
 	/* add spacing between emoji and text */
 	margin-right: 10px;
+}
+
+/* -------------------------------- RESPONSIVE STYLING ---------------------------*/
+
+@media (min-width: 780px) {
+	.hero {
+		flex-direction: row;
+	}
+	.side {
+		margin-left: 20px;
+	}
+	.mobileShow_desktopHide {
+		display: none;
+	}
+	
+	.desktopShow_mobileHide {
+		display: block;
+	}
 }
 
 
